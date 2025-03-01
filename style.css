@@ -1,0 +1,860 @@
+@font-face {
+    font-family: 'Chomsky';
+    src: url('assets/fonts/chomsky/Chomsky.woff') format('woff2'),
+         url('assets/fonts/chomsky/Chomsky.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brittany Signature';
+    src: url('assets/fonts/brittany_signature/BrittanySignature.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Smudgie Crayon';
+    src: url('assets/fonts/smudgie-crayon-font/SmudgieCrayon-rY0O.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+
+/* Base Styles and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.underline {
+    height: 3px;
+    width: 100px;
+    background-color: #d4af37;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c4a030;
+    transform: translateY(-2px);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 5px;
+}
+
+.nav-links li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.nav-links li a:hover {
+    color: #d4af37;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.hero-content .date {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.hero-content .tagline {
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* Welcome Section */
+.welcome {
+    background-color: #f9f9f9;
+    padding: 5rem 0;
+}
+
+.welcome-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Countdown Section */
+.countdown {
+    background-color: #d4af37;
+    padding: 3rem 0;
+    color: #fff;
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.countdown-item {
+    text-align: center;
+    width: 120px;
+}
+
+.countdown-item h3 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-item span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Story Section */
+.story {
+    padding: 5rem 0;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    width: 30%;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+/* Details Section */
+.details {
+    background-color: #f9f9f9;
+    padding: 5rem 0;
+}
+
+.details-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.detail-item {
+    width: 25%;
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-item i {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+/* Event Timeline Section */
+.event-timeline {
+    padding: 5rem 0;
+}
+
+.timeline-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+}
+
+.day {
+    margin-bottom: 1rem;
+    background-image: url('/assets/images/scroll.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 600px;
+    padding-top: 70px;
+}
+
+.day h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #554717;
+    position: relative;
+}
+
+.day h3:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background-color: #d4af37;
+}
+
+.day-events {
+    padding-left: 4.7rem;
+}
+
+.event {
+    display: flex;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.event:before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d4af37;
+}
+
+.event-time {
+    width: 100px;
+    font-weight: 600;
+}
+
+.event-details h4 {
+    margin-bottom: 0.2rem;
+}
+
+/* Wedding Party Section */
+.wedding-party {
+    background-color: #f9f9f9;
+    padding: 5rem 0;
+}
+
+.party-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.party-group {
+    margin-bottom: 3rem;
+}
+
+.party-group h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+}
+
+.party-members {
+    text-align: center;
+}
+
+.party-member {
+    margin-bottom: 1.5rem;
+}
+
+.party-member h4 {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.party-members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.party-members-grid .party-member {
+    width: 45%;
+}
+
+/* Fun Facts Section */
+.fun-facts {
+    padding: 5rem 0;
+}
+
+.facts-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.facts-numbers, .facts-list, .he-said-she-said {
+    width: 30%;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.facts-numbers h3, .facts-list h3, .he-said-she-said h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+}
+
+.number-item {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.number-item h4 {
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+.facts-list ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.facts-list ul li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-size: 1.5rem;
+}
+
+.quiz-item {
+    margin-bottom: 1.5rem;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+}
+
+/* Gallery Section */
+.gallery {
+    background-color: #f9f9f9;
+    padding: 5rem 0;
+}
+
+.gallery-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.social-share {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-share h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.hashtag {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin-top: 1rem;
+}
+
+/* RSVP Section */
+.rsvp {
+    padding: 5rem 0;
+}
+
+.rsvp-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-group label {
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+/* Gifts Section */
+.gifts {
+    background-color: #f9f9f9;
+    padding: 5rem 0;
+}
+
+.gifts-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.honeymoon-fund {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.honeymoon-fund h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.honeymoon-fund p {
+    margin-bottom: 1.5rem;
+}
+
+/* Guest Awards Section */
+.guest-awards {
+    padding: 5rem 0;
+}
+
+.awards-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.award {
+    width: 40%;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.award h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 3rem 0;
+    color: #fff;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 70%;
+    }
+    
+    .timeline-item,
+    .detail-item {
+        width: 45%;
+        margin-bottom: 2rem;
+    }
+    
+    .facts-numbers, .facts-list, .he-said-she-said {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 1;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }
+    
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .timeline-item,
+    .detail-item,
+    .party-members-grid .party-member,
+    .award {
+        width: 100%;
+    }
+}
+
+/* Nav Animation */
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.games {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.bucket-list {
+    align-items: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bucket-list-heading {
+    font-family: Brittany Signature;
+    font-size: 48px;
+    text-align: center;
+}
+
+.bucket-list-text {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.bucket-img {
+    height: 200px;
+    width: 400px;
+    z-index: 1;
+}
+
+.tic-tac-toe-container {
+
+}
+/* Container: 3x3 grid */
+#ticTacToe {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 300px;    /* adjust as desired */
+    gap: 2px;
+    margin: 20px auto;
+  }
+
+  /* Each cell */
+.cell {
+    aspect-ratio: 1;          /* keep squares if browser supports */
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Use your custom font for X and O */
+    font-family: 'smudgie crayon', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+
+    cursor: pointer;          /* show pointer on hover */
+    text-transform: uppercase;
+  }
+
+  /* Status message */
+  #status {
+    text-align: center;
+    font-family: Arial, sans-serif;  /* or your preferred fallback */
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  /* Reset button */
+  #resetBtn {
+    display: block;
+    margin: 10px auto;
+    padding: 5px 15px;
+    cursor: pointer;
+  }
+  
+
+#formContainer {
+    width: 200px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    align-items: center;
+    margin: auto;
+
+    /* The transition for transform and opacity */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+#userInput {
+    height: 100px;
+}
